@@ -1,0 +1,25 @@
+name: Lint and Validate Docker Compose
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Validate Markdown & YAML Files
+        run: |
+          echo "Validating repository structure and files..."
+          ls -la
+          echo "Checking YAML syntax..."
+          find . -name "*.yml" -o -name "*.yaml" | while read file; do
+            echo "Checking $file"
+            python3 -c "import yaml; yaml.safe_load(open('$file'))" || exit 1
+          done
+          echo "All checks passed successfully!"

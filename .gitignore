@@ -1,0 +1,26 @@
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# Docker & Container runtime
+*.pid
+*.sock
+
+# OS Generated
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor & IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs & Database volumes
+*.log
+logs/
+pgdata/
+mysql_data/
