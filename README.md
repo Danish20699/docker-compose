@@ -59,7 +59,7 @@ A structured, hands-on DevOps repository mastering **Docker Compose** multi-cont
 
 | Lab | Title & Topic | Key Concepts Practiced | Status |
 | :---: | :--- | :--- | :---: |
-| **Lab 64** | [Docker Compose Introduction](64-docker-compose-intro.md) | YAML structure, service definitions, `up -d`, `down`, multi-container networking | 🔄 In Progress |
+| **Lab 64** | [Docker Compose Introduction](64-docker-compose-intro.md) | YAML structure, service definitions, `up -d`, `down`, multi-container networking | ✅ Completed |
 
 ---
 

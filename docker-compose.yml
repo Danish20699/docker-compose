@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  # Service 1: Nginx Web Server
+  web:
+    image: nginx:alpine
+    container_name: compose-web-service
+    ports:
+      - "8085:80"
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html:ro
+    restart: always
+    networks:
+      - app-network
+    depends_on:
+      - redis
+
+  # Service 2: Redis In-Memory Cache
+  redis:
+    image: redis:7-alpine
+    container_name: compose-redis-service
+    ports:
+      - "6379:6379"
+    restart: always
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
